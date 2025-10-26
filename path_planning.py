@@ -8,7 +8,6 @@ def path_coordinates(image):
     i = 0
     for row in image:
         if 255 in row:
-            print(row.tolist().index(255))
             queue.append((row.tolist().index(255), i))
             break
         i+=1
@@ -23,10 +22,11 @@ def path_coordinates(image):
             # Sort neighbors by number of white pixels surrounding them (smaller number of white pixels means it's more likely to be an edge)
             if len(neighbors) > 1:
                 # Reverse because we want pixels with fewer white neighbors to be explored first
-                neighbors.sort(key=lambda x: len(get_neighbors(x, image)), reverse=True)
-            for neighbor in neighbors:
-                if neighbor not in queue:
-                    queue.insert(0, neighbor)
+                neighbors.sort(key=lambda x: len(get_neighbors(x, image)))
+            
+            if len(neighbors) > 0 and neighbors[0] not in queue:
+                queue.insert(0, neighbors[0])
+                    
     
     return path
 
