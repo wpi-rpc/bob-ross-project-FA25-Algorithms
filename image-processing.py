@@ -7,8 +7,8 @@ img = cv.imread('circles.jpg', cv.IMREAD_GRAYSCALE)
 assert img is not None, "file could not be read, check with os.path.exists()"
 edges = cv.Canny(img,150,400)
 
-for _ in range(1):
-    path = path_coordinates(edges)
+path = path_coordinates(edges)
+print(path)
 
 plt.subplot(121),plt.imshow(img,cmap = 'gray')
 plt.title('Original Image'), plt.xticks([]), plt.yticks([])

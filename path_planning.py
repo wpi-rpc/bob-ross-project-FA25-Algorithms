@@ -2,6 +2,18 @@ import numpy as np
 
 def path_coordinates(image):
     path = []
+    streak = generate_streak(image)
+    # Keep going as long as drawing streak is present
+    while len(streak) > 0:
+        # Ignore streaks that are too short, not significant enough
+        if len(streak) > 2:
+            path.append(streak)
+        streak = generate_streak(image)
+
+    return path
+
+def generate_streak(image):
+    streak = []
     queue = []
     start = None
     # Find first white pixel in the image
@@ -17,7 +29,7 @@ def path_coordinates(image):
         if image[current[1]][current[0]] == 255:
             # Mark pixel as visited by coloring it gray
             image[current[1]][current[0]] = 128
-            path.append(current)
+            streak.append(current)
             neighbors = get_neighbors(current, image)
             # Sort neighbors by number of white pixels surrounding them (smaller number of white pixels means it's more likely to be an edge)
             if len(neighbors) > 1:
@@ -28,7 +40,7 @@ def path_coordinates(image):
                 queue.insert(0, neighbors[0])
                     
     
-    return path
+    return streak
 
 # Returns all white pixel neighbors of a given pixel
 def get_neighbors(pixel, image):
