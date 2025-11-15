@@ -1,1 +1,2 @@
-print("Useless line to merge")
+def path_coordinates(img):
+    print("blah")
