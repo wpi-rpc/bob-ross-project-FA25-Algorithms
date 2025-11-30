@@ -94,4 +94,13 @@ def color_path_coordinates(gray_image, bgr_image):
                     path.append([prev_edge, (y, x), color])
                 prev_edge = (y, x)
         reverse = not reverse
-    return path
+    return merge_consecutive_colors(path)
+
+def merge_consecutive_colors(path):
+    new_path = []
+    for i in range(1, len(path)):
+        if (path[i-1][1] == path[i][0] and path[i-1][2] == path[i][2]):
+            new_path.append([path[i-1][0], path[i][1], path[i][2]])
+        else:
+            new_path.append(path[i])
+    return new_path
