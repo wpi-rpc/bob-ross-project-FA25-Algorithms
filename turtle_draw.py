@@ -1,15 +1,16 @@
 import cv2 as cv
 import turtle
-import math
 from edge_path_planning import edge_path_coordinates
 from color_path_planning import color_path_coordinates
-IMAGE = 'pikachu.webp'
-
+IMAGE = 'jordan.png'
+IMAGE_SIZE = (240, 180)
 # Process the image
 gray_img = cv.imread(IMAGE, cv.IMREAD_GRAYSCALE) # choose the image you want here
+gray_img = cv.resize(gray_img, IMAGE_SIZE)
 assert gray_img is not None, "file could not be read, check with os.path.exists()"
 edges = cv.Canny(gray_img,100,250) # edge detection function (parameters can be adjusted)
 color_img = cv.imread(IMAGE)
+color_img = cv.resize(color_img, IMAGE_SIZE)
 
 edge_path = edge_path_coordinates(edges)
 
