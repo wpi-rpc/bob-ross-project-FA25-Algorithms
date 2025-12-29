@@ -8,7 +8,7 @@ def edge_path_coordinates(image):
             path.append(streak)
         streak = generate_edge_streak(image)
 
-    return path
+    return interpolate(path)
 
 def generate_edge_streak(image):
     streak = []
@@ -36,7 +36,6 @@ def generate_edge_streak(image):
 
             if len(neighbors) > 0 and neighbors[0] not in queue:
                 queue.insert(0, neighbors[0])
-
 
     return streak
 
@@ -68,4 +67,16 @@ def get_neighbors(pixel, image):
     
     return neighbors
 
-
+def interpolate(path):
+    new_path = []
+    
+    for streak in path:
+        new_streak = []
+        previous_point = streak[0]
+        new_streak.append(previous_point)
+        for point in streak:
+            if ((point[0] - previous_point[0]) ** 2 + (point[1] - previous_point[1]) ** 2) > 10:
+                new_streak.append(point)
+                previous_point = point
+        new_path.append(new_streak)
+    return new_path
