@@ -3,7 +3,8 @@ import turtle
 from edge_path_planning import edge_path_coordinates
 from color_path_planning import color_path_coordinates
 IMAGE = 'jordan.png'
-IMAGE_SIZE = (240, 180)
+#240, 180
+IMAGE_SIZE = (1000, 1000)
 # Process the image
 gray_img = cv.imread(IMAGE, cv.IMREAD_GRAYSCALE) # choose the image you want here
 gray_img = cv.resize(gray_img, IMAGE_SIZE)
@@ -18,7 +19,7 @@ edge_path = edge_path_coordinates(edges)
 WINDOW_WIDTH = 800
 WINDOW_HEIGHT = 800
 turtle.setup(width=WINDOW_WIDTH, height=WINDOW_HEIGHT)
-turtle.speed(0)
+turtle.speed(10)
 turtle.hideturtle()
 turtle.tracer(False)  # disable animation for faster drawing
 
@@ -43,9 +44,10 @@ for streak in edge_path:
         turtle_x = (x - edges.shape[1]/2) * 1
         turtle_y = (edges.shape[0]/2 - y) * 1
         turtle.goto(turtle_x, turtle_y) # move turtle to the calculated position
+        turtle.update()
     turtle.penup()  # lift pen between streaks
     first_point = True
-turtle.update()
+
 
 color_path = color_path_coordinates(edges, color_img)
 for streak in color_path:
