@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+project(BobRoss)
+find_package(OpenCV REQUIRED)
+add_executable(BobRoss csv_write.cpp)
+target_link_libraries(BobRoss ${OpenCV_LIBS})
