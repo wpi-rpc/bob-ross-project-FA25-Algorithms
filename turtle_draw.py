@@ -2,7 +2,7 @@ import cv2 as cv
 import turtle
 from edge_path_planning import edge_path_coordinates
 from color_path_planning import color_path_coordinates
-IMAGE = 'jordan.png'
+IMAGE = 'steph.jpeg'
 #240, 180
 IMAGE_SIZE = (1000, 1000)
 # Process the image
@@ -44,7 +44,7 @@ for streak in edge_path:
         turtle_x = (x - edges.shape[1]/2) * 1
         turtle_y = (edges.shape[0]/2 - y) * 1
         turtle.goto(turtle_x, turtle_y) # move turtle to the calculated position
-        turtle.update()
+        #turtle.update()
     turtle.penup()  # lift pen between streaks
     first_point = True
 
@@ -61,7 +61,7 @@ for streak in color_path:
     turtle.goto((start[1] - edges.shape[1]/2) + 1, (edges.shape[0]/2 - start[0]))
     turtle.pendown()
     turtle.goto((end[1] - edges.shape[1]/2), (edges.shape[0]/2 - end[0]))
-    turtle.update()
+turtle.update()
 
 turtle.done()
 
