@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/Users/emersonpalaganas/Documents/BobRossTesting/bob-ross-project-FA25-Algorithms-main/cpp/build",
+  "command": "/usr/bin/c++  -isystem /opt/homebrew/Cellar/opencv/4.13.0_3/include/opencv4 -isystem /opt/homebrew/include -std=gnu++17 -arch arm64 -o CMakeFiles/BobRoss.dir/csv_write.cpp.o -c /Users/emersonpalaganas/Documents/BobRossTesting/bob-ross-project-FA25-Algorithms-main/cpp/csv_write.cpp",
+  "file": "/Users/emersonpalaganas/Documents/BobRossTesting/bob-ross-project-FA25-Algorithms-main/cpp/csv_write.cpp",
+  "output": "CMakeFiles/BobRoss.dir/csv_write.cpp.o"
+},
+{
+  "directory": "/Users/emersonpalaganas/Documents/BobRossTesting/bob-ross-project-FA25-Algorithms-main/cpp/build",
+  "command": "/usr/bin/c++  -isystem /opt/homebrew/Cellar/opencv/4.13.0_3/include/opencv4 -isystem /opt/homebrew/include -std=gnu++17 -arch arm64 -o CMakeFiles/BobRoss.dir/edge_path_planning.cpp.o -c /Users/emersonpalaganas/Documents/BobRossTesting/bob-ross-project-FA25-Algorithms-main/cpp/edge_path_planning.cpp",
+  "file": "/Users/emersonpalaganas/Documents/BobRossTesting/bob-ross-project-FA25-Algorithms-main/cpp/edge_path_planning.cpp",
+  "output": "CMakeFiles/BobRoss.dir/edge_path_planning.cpp.o"
+}
+]

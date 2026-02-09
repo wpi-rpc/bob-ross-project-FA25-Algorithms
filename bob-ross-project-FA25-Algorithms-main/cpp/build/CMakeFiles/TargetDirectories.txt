@@ -1,0 +1,3 @@
+/Users/emersonpalaganas/Documents/BobRossTesting/bob-ross-project-FA25-Algorithms-main/cpp/build/CMakeFiles/BobRoss.dir
+/Users/emersonpalaganas/Documents/BobRossTesting/bob-ross-project-FA25-Algorithms-main/cpp/build/CMakeFiles/edit_cache.dir
+/Users/emersonpalaganas/Documents/BobRossTesting/bob-ross-project-FA25-Algorithms-main/cpp/build/CMakeFiles/rebuild_cache.dir
